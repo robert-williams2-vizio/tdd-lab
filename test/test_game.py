@@ -44,3 +44,11 @@ class GameTest(TestCase):
             self.Game.roll(1)
 
         self.assertEqual(self.Game.score(), 29)
+
+    def test_one_strike(self):
+        self.Game.roll(10)
+
+        for _ in range(18):
+            self.Game.roll(1)
+        
+        self.assertEqual(self.Game.score(), 30)
