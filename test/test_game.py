@@ -1,6 +1,6 @@
 from unittest import TestCase
 
-# from src import Game 
+from src import Game 
 
 '''
 Game
@@ -19,3 +19,9 @@ class GameTest(TestCase):
 
     def test_init(self):
         pass
+
+    def test_roll_20times_0(self):
+        for x in range(20):
+            self.Game.roll(0)
+
+        self.assertEqual(self.Game.score(), 0)
